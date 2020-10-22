@@ -9,11 +9,16 @@ public class Product {
     int quantity;
     boolean active;
 
-    Product () {
-        System.out.println("Created Product Object");
-        id = 1;
-        name = "default name";
-        category = "default category";
+    Product (int _id, String _name, String _category,
+             float _salesPrice, float _cost, int _quantity,
+             boolean _active) {
+        id = _id;
+        name = _name;
+        category = _category;
+        salesPrice = _salesPrice;
+        cost = _cost;
+        quantity = _quantity;
+        active = _active;
     }
 
     float getProfitOrLoss() {
