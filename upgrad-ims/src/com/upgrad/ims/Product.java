@@ -9,6 +9,11 @@ public class Product {
     int quantity;
     boolean active;
 
+    Product() {
+        this(1, "product", "category",
+                0f, 0f, 0, false);
+    }
+
     Product (int id, String name, String category,
              float salesPrice, float cost, int quantity,
              boolean active) {
