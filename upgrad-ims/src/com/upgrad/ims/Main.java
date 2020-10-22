@@ -7,10 +7,12 @@ public class Main {
                 new Product(1, "Apple MacBook Air", "Laptop",
                         80000f, 60000f, 1000, true);
 
+        Product clone = new Product(appleMacBookAir);
+        System.out.println(clone.name);
         System.out.println(appleMacBookAir.name);
-        System.out.println(appleMacBookAir.active);
-        appleMacBookAir.deactivate();
-        System.out.println(appleMacBookAir.active);
-        System.out.println(appleMacBookAir.getProfitOrLoss());
+
+        clone.name = "clone";
+        System.out.println(clone.name);
+        System.out.println(appleMacBookAir.name);
     }
 }

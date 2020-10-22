@@ -21,6 +21,16 @@ public class Product {
         active = _active;
     }
 
+    Product (Product product) {
+        id = product.id;
+        name = product.name;
+        category = product.category;
+        salesPrice = product.salesPrice;
+        cost = product.cost;
+        quantity = product.quantity;
+        active = product.active;
+    }
+
     float getProfitOrLoss() {
         return salesPrice - cost;
     }
