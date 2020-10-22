@@ -14,5 +14,20 @@ public class Main {
         clone.name = "clone";
         System.out.println(clone.name);
         System.out.println(appleMacBookAir.name);
+
+        Customer customer =
+                new Customer(1, "2nd street", "Bengaluru",
+                        "Karnataka", "Srishti Gupta",
+                        "9090909090", "srishti.gupta@gmail.com", 10);
+
+        Customer customer1 = new Customer(customer);
+
+        System.out.println(customer.contactName);
+        System.out.println(customer1.contactName);
+
+        customer1.contactName = "default name";
+
+        System.out.println(customer.contactName);
+        System.out.println(customer1.contactName);
     }
 }
