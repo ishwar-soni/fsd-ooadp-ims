@@ -9,6 +9,13 @@ public class Product {
     int quantity;
     boolean active;
 
+    Product () {
+        System.out.println("Created Product Object");
+        id = 1;
+        name = "default name";
+        category = "default category";
+    }
+
     float getProfitOrLoss() {
         return salesPrice - cost;
     }
