@@ -14,6 +14,7 @@ public class Vendor {
     String vendorName;
     float credit;
     Order[] orders;
+    Product[] products;
 
     Vendor(int id, String addressStreet, String addressCity,
            String addressState, String contactName, String contactPhone,
@@ -28,6 +29,7 @@ public class Vendor {
         this.vendorName = vendorName;
         this.credit = 0.0f;
         this.orders = new Order[100];
+        this.products = new Product[100];
     }
 
     String getAddressDetails() {
@@ -40,5 +42,23 @@ public class Vendor {
 
     float checkDue() {
         return this.credit;
+    }
+
+    Product fetchProductById(int id) {
+        for (Product product: products) {
+            if (product.id == id) {
+                return product;
+            }
+        }
+        return null;
+    }
+
+    Product fetchProductByName(String name) {
+        for (Product product: products) {
+            if (product.name.equals(name)) {
+                return product;
+            }
+        }
+        return null;
     }
 }

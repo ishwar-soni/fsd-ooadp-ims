@@ -17,8 +17,8 @@ public class Main {
                 "ishwar.soni@gmail.com", "LenVen InfoHub");
 
         Order order1 = new Order(1, lenVenInfoHub, "26/10/2020", 10, 10000);
-        lenVenInfoHub.orders[0] = order1;
 
-        System.out.println(lenVenInfoHub.orders[0].date);
+        lenVenInfoHub.products[0] = appleMacBookAir;
+        System.out.println(lenVenInfoHub.fetchProductByName("Apple MacBook Air").category);
     }
 }
