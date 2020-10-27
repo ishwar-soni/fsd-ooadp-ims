@@ -1,6 +1,8 @@
 package com.upgrad.ims;
 
 public class Vendor {
+    static int idCounter;
+
     int id;
 
     Address address;
@@ -11,10 +13,14 @@ public class Vendor {
     Order[] orders;
     Product[] products;
 
-    Vendor(int id, String addressStreet, String addressCity,
+    static {
+        idCounter = 0;
+    }
+
+    Vendor(String addressStreet, String addressCity,
            String addressState, String contactName, String contactPhone,
            String contactEmail, String vendorName) {
-        this.id = id;
+        this.id = ++idCounter;
         this.address = new Address(addressStreet, addressCity, addressState);
         this.contact = new Contact(contactName, contactPhone, contactEmail);
         this.vendorName = vendorName;
@@ -51,5 +57,9 @@ public class Vendor {
             }
         }
         return null;
+    }
+
+    static int countVendors() {
+        return idCounter;
     }
 }

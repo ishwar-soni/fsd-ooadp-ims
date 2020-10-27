@@ -12,7 +12,7 @@ public class Main {
                         "Karnataka", "Srishti Gupta",
                         "9090909090", "srishti.gupta@gmail.com", 10);
 
-        Vendor lenVenInfoHub = new Vendor(1, "8th street", "Bengaluru",
+        Vendor lenVenInfoHub = new Vendor("8th street", "Bengaluru",
                 "Karnataka", "Ishwar", "1234567890",
                 "ishwar.soni@gmail.com", "LenVen InfoHub");
 
