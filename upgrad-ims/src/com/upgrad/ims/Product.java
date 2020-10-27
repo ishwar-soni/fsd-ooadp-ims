@@ -1,7 +1,7 @@
 package com.upgrad.ims;
 
 public class Product {
-    static int idCounter = 0;
+    static int idCounter;
 
     int id;
     String name;
@@ -10,6 +10,11 @@ public class Product {
     float cost;
     int quantity;
     boolean active;
+
+    static {
+        //fetch data from database and initialize it
+        idCounter = 0;
+    }
 
     Product() {
         this("product", "category",
