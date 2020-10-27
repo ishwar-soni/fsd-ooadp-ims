@@ -16,9 +16,10 @@ public class Main {
                 "Karnataka", "Ishwar", "1234567890",
                 "ishwar.soni@gmail.com", "LenVen InfoHub");
 
-        Order order1 = new Order(1, lenVenInfoHub, "26/10/2020", 10, 10000);
-        lenVenInfoHub.products[0] = appleMacBookAir;
+        Order order1 = new Order(1, lenVenInfoHub, "26/10/2020", appleMacBookAir,
+                10, 10000);
 
-        System.out.println(lenVenInfoHub.address.state);
+        System.out.println(lenVenInfoHub.credit);
+        System.out.println(lenVenInfoHub.contact.email);
     }
 }

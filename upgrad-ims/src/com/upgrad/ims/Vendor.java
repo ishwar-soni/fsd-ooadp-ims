@@ -4,10 +4,7 @@ public class Vendor {
     int id;
 
     Address address;
-
-    String contactName;
-    String contactPhone;
-    String contactEmail;
+    Contact contact;
 
     String vendorName;
     float credit;
@@ -19,9 +16,7 @@ public class Vendor {
            String contactEmail, String vendorName) {
         this.id = id;
         this.address = new Address(addressStreet, addressCity, addressState);
-        this.contactName = contactName;
-        this.contactPhone = contactPhone;
-        this.contactEmail = contactEmail;
+        this.contact = new Contact(contactName, contactPhone, contactEmail);
         this.vendorName = vendorName;
         this.credit = 0.0f;
         this.orders = new Order[100];
@@ -33,7 +28,7 @@ public class Vendor {
     }
 
     String getContactDetails() {
-        return contactName + ", " + contactPhone + ", " + contactEmail;
+        return contact.name + ", " + contact.phone + ", " + contact.email;
     }
 
     float checkDue() {
