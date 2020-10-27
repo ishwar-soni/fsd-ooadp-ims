@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
         Product appleMacBookAir =
-                new Product(1, "Apple MacBook Air", "Laptop",
+                new Product("Apple MacBook Air", "Laptop",
                         80000f, 60000f, 1000, true);
 
         Customer customer =
@@ -19,7 +19,9 @@ public class Main {
         Order order1 = new Order(1, lenVenInfoHub, "26/10/2020", appleMacBookAir,
                 10, 10000);
 
-        System.out.println(lenVenInfoHub.credit);
-        System.out.println(lenVenInfoHub.contact.email);
+        System.out.println(appleMacBookAir.id);
+        Product dummy = new Product();
+        System.out.println(dummy.id);
+        System.out.println(Product.countProducts());
     }
 }

@@ -1,6 +1,8 @@
 package com.upgrad.ims;
 
 public class Product {
+    static int idCounter = 0;
+
     int id;
     String name;
     String category;
@@ -10,14 +12,14 @@ public class Product {
     boolean active;
 
     Product() {
-        this(1, "product", "category",
+        this("product", "category",
                 0f, 0f, 0, false);
     }
 
-    Product (int id, String name, String category,
+    Product (String name, String category,
              float salesPrice, float cost, int quantity,
              boolean active) {
-        this.id = id;
+        this.id = ++idCounter;
         this.name = name;
         this.category = category;
         this.salesPrice = salesPrice;
@@ -50,5 +52,9 @@ public class Product {
 
     boolean isBelowThreshold() {
         return this.quantity < 100;
+    }
+
+    static int countProducts() {
+        return idCounter;
     }
 }
