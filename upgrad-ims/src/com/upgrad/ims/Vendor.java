@@ -3,9 +3,7 @@ package com.upgrad.ims;
 public class Vendor {
     int id;
 
-    String addressStreet;
-    String addressCity;
-    String addressState;
+    Address address;
 
     String contactName;
     String contactPhone;
@@ -20,9 +18,7 @@ public class Vendor {
            String addressState, String contactName, String contactPhone,
            String contactEmail, String vendorName) {
         this.id = id;
-        this.addressStreet = addressStreet;
-        this.addressCity = addressCity;
-        this.addressState = addressState;
+        this.address = new Address(addressStreet, addressCity, addressState);
         this.contactName = contactName;
         this.contactPhone = contactPhone;
         this.contactEmail = contactEmail;
@@ -33,7 +29,7 @@ public class Vendor {
     }
 
     String getAddressDetails() {
-        return addressStreet + ", " + addressCity + ", " + addressState;
+        return address.street + ", " + address.city + ", " + address.state;
     }
 
     String getContactDetails() {
