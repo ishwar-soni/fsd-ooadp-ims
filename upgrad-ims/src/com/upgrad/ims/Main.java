@@ -20,5 +20,6 @@ public class Main {
                 10, 10000);
 
         System.out.println(lenVenInfoHub.credit);
+        System.out.println(lenVenInfoHub.getAddressDetails());
     }
 }
