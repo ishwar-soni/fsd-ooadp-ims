@@ -21,6 +21,6 @@ public class Order {
     }
 
     void updateVendorCredit() {
-        this.vendor.credit += (orderedProduct.cost * orderedQuantity - amountPaid);
+        this.vendor.credit += (orderedProduct.getCost() * orderedQuantity - amountPaid);
     }
 }

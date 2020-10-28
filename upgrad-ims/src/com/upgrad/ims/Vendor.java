@@ -43,7 +43,7 @@ public class Vendor {
 
     Product fetchProductById(int id) {
         for (Product product: products) {
-            if (product.id == id) {
+            if (product.getId() == id) {
                 return product;
             }
         }
@@ -52,7 +52,7 @@ public class Vendor {
 
     Product fetchProductByName(String name) {
         for (Product product: products) {
-            if (product.name.equals(name)) {
+            if (product.getName().equals(name)) {
                 return product;
             }
         }

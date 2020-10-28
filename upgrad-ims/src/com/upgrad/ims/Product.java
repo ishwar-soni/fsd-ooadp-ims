@@ -1,27 +1,27 @@
 package com.upgrad.ims;
 
 public class Product {
-    static int idCounter;
+    private static int idCounter;
 
-    int id;
-    String name;
-    String category;
-    float salesPrice;
-    float cost;
-    int quantity;
-    boolean active;
+    private int id;
+    private String name;
+    private String category;
+    private float salesPrice;
+    private float cost;
+    private int quantity;
+    private boolean active;
 
     static {
         //fetch data from database and initialize it
         idCounter = 0;
     }
 
-    Product() {
+    public Product() {
         this("product", "category",
                 0f, 0f, 0, false);
     }
 
-    Product (String name, String category,
+    public Product (String name, String category,
              float salesPrice, float cost, int quantity,
              boolean active) {
         this.id = ++idCounter;
@@ -33,7 +33,7 @@ public class Product {
         this.active = active;
     }
 
-    Product (Product product) {
+    public Product (Product product) {
         this.id = product.id;
         this.name = product.name;
         this.category = product.category;
@@ -43,23 +43,71 @@ public class Product {
         this.active = product.active;
     }
 
-    float getProfitOrLoss() {
+    public int getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public float getSalesPrice() {
+        return salesPrice;
+    }
+
+    public void setSalesPrice(float salesPrice) {
+        this.salesPrice = Math.max(salesPrice, 0.0f);
+    }
+
+    public float getCost() {
+        return cost;
+    }
+
+    public void setCost(float cost) {
+        this.cost = cost;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public float getProfitOrLoss() {
         return this.salesPrice - this.cost;
     }
 
-    void activate() {
+    public boolean isActive() {
+        return active;
+    }
+
+    public void activate() {
         this.active = true;
     }
 
-    void deactivate() {
+    public void deactivate() {
         this.active = false;
     }
 
-    boolean isBelowThreshold() {
+    public boolean isBelowThreshold() {
         return this.quantity < 100;
     }
 
-    static int countProducts() {
+    public static int countProducts() {
         return idCounter;
     }
 }
