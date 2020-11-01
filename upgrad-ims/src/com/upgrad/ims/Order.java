@@ -29,7 +29,7 @@ public class Order {
     }
 
     public void setVendor(Vendor vendor) {
-        this.vendor.credit -= (orderedProduct.getCost() * orderedQuantity - amountPaid);
+        this.vendor.setCredit(this.vendor.checkDue() - (orderedProduct.getCost() * orderedQuantity - amountPaid));
         this.vendor = vendor;
         this.updateVendorCredit();
     }
@@ -47,7 +47,7 @@ public class Order {
     }
 
     public void setOrderedProduct(Product orderedProduct) {
-        this.vendor.credit -= (orderedProduct.getCost() * orderedQuantity - amountPaid);
+        this.vendor.setCredit(this.vendor.checkDue() - (orderedProduct.getCost() * orderedQuantity - amountPaid));
         this.orderedProduct = orderedProduct;
         this.updateVendorCredit();
     }
@@ -57,7 +57,7 @@ public class Order {
     }
 
     public void setOrderedQuantity(int orderedQuantity) {
-        this.vendor.credit -= (orderedProduct.getCost() * orderedQuantity - amountPaid);
+        this.vendor.setCredit(this.vendor.checkDue() - (orderedProduct.getCost() * orderedQuantity - amountPaid));
         this.orderedQuantity = orderedQuantity;
         this.updateVendorCredit();
     }
@@ -67,12 +67,12 @@ public class Order {
     }
 
     public void setAmountPaid(float amountPaid) {
-        this.vendor.credit -= (orderedProduct.getCost() * orderedQuantity - amountPaid);
+        this.vendor.setCredit(this.vendor.checkDue() - (orderedProduct.getCost() * orderedQuantity - amountPaid));
         this.amountPaid = amountPaid;
         this.updateVendorCredit();
     }
 
     void updateVendorCredit() {
-        this.vendor.credit += (orderedProduct.getCost() * orderedQuantity - amountPaid);
+        this.vendor.setCredit(this.vendor.checkDue() + (orderedProduct.getCost() * orderedQuantity - amountPaid));
     }
 }

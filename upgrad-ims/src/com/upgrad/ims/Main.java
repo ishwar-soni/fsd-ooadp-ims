@@ -19,7 +19,7 @@ public class Main {
         Order order1 = new Order(1, lenVenInfoHub, "26/10/2020", appleMacBookAir,
                 10, 10000);
 
-        System.out.println(lenVenInfoHub.credit);
+        System.out.println(lenVenInfoHub.checkDue());
         System.out.println(lenVenInfoHub.getAddressDetails());
     }
 }
