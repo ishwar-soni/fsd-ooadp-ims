@@ -8,7 +8,7 @@ public class Main {
                         80000f, 60000f, 1000, true);
 
         Customer customer =
-                new Customer(1, "2nd street", "Bengaluru",
+                new Customer("2nd street", "Bengaluru",
                         "Karnataka", "Srishti Gupta",
                         "9090909090", "srishti.gupta@gmail.com", 10);
 
@@ -21,5 +21,6 @@ public class Main {
 
         System.out.println(lenVenInfoHub.checkDue());
         System.out.println(lenVenInfoHub.getAddressDetails());
+        System.out.println(customer.getAddressDetails());
     }
 }

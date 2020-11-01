@@ -1,52 +1,14 @@
 package com.upgrad.ims;
 
-public class Customer {
-    int id;
+public class Customer extends BusinessPartner {
 
-    String addressStreet;
-    String addressCity;
-    String addressState;
+    private int transactionCount;
 
-    String contactName;
-    String contactPhone;
-    String contactEmail;
-
-    int transactionCount;
-
-    Customer() {
-        System.out.println("Customer Object Created.");
-    }
-
-    Customer(int _id, String _addressStreet, String _addressCity, String _addressState,
-             String _contactName, String _contactPhone, String _contactEmail,
-             int _transactionCount) {
-        id = _id;
-        addressStreet = _addressStreet;
-        addressCity = _addressCity;
-        addressState = _addressState;
-        contactName = _contactName;
-        contactPhone = _contactPhone;
-        contactEmail = _contactEmail;
-        transactionCount = _transactionCount;
-    }
-
-    Customer(Customer customer) {
-        id = customer.id;
-        addressStreet = customer.addressStreet;
-        addressCity = customer.addressCity;
-        addressState = customer.addressState;
-        contactName = customer.contactName;
-        contactPhone = customer.contactPhone;
-        contactEmail = customer.contactEmail;
-        transactionCount = customer.transactionCount;
-    }
-
-    String getAddressDetails() {
-        return addressStreet + ", " + addressCity + ", " + addressState;
-    }
-
-    String getContactDetails() {
-        return contactName + ", " + contactPhone + ", " + contactEmail;
+    public Customer(String addressStreet, String addressCity, String addressState,
+             String contactName, String contactPhone, String contactEmail,
+             int transactionCount) {
+        super(addressStreet, addressCity, addressState, contactName, contactPhone, contactEmail);
+        this.transactionCount = transactionCount;
     }
 
     int getTransactionCount() {
